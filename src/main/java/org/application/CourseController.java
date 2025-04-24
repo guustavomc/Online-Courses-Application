@@ -22,4 +22,18 @@ public class CourseController {
     public List<Course> getCourses(){
         return service.findAllCourses();
     }
+
+    @GetMapping("/name/{name}")
+    public Course getCourseWithName(@PathVariable("name") String name){
+        System.out.println(name);
+        return service.findCourseWithName(name);
+    }
+
+    @GetMapping("/organization/{org}")
+    public List<Course> getCourseWithOrganization(@PathVariable("org") String org){
+        System.out.println(org);
+        return service.findCourseWithOrganization(org);
+    }
+
+
 }
