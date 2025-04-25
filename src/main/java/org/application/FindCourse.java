@@ -59,4 +59,11 @@ public class FindCourse {
     public List<Course> findCourseWithOrganization(String organization){
         return courseList.stream().filter(course -> course.getOrganization().stream().anyMatch( t -> t.trim().equalsIgnoreCase(organization))).collect(Collectors.toList());
     }
+
+    public List<Course> findCourseWithSkill(String skill){
+        return courseList.stream()
+                .filter(course -> course.getSkills().stream()
+                        .anyMatch( t -> t.trim().equalsIgnoreCase(skill)))
+                .collect(Collectors.toList());
+    }
 }

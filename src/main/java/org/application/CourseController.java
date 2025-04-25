@@ -35,5 +35,11 @@ public class CourseController {
         return service.findCourseWithOrganization(org);
     }
 
+    @GetMapping("/skill/{skill}")
+    public List<Course> getCourseWithSkill(@PathVariable("skill") String skill){
+        System.out.println(skill);
+        return service.findCourseWithSkill(skill);
+    }
+
 
 }
